@@ -21,7 +21,9 @@ export const NFTProvider = ({ children }) => {
     const provider = new ethers.providers.JsonRpcProvider(
       process.env.INFURIA_RPC_URL
     );
+    console.log(provider);
     const contract = fetchContract(provider);
+    console.log(contract);
 
     const data = await contract.fetchMarketItems();
 
