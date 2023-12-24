@@ -18,10 +18,10 @@ export const NFTProvider = ({ children }) => {
   const fetchNFTs = async () => {
     setIsLoadingNFT(false);
 
-    const provider = new ethers.providers.JsonRpcProvider();
-    console.log(provider);
+    const provider = new ethers.providers.JsonRpcProvider(
+      process.env.INFURIA_RPC_URL
+    );
     const contract = fetchContract(provider);
-    console.log(contract);
 
     const data = await contract.fetchMarketItems();
 
