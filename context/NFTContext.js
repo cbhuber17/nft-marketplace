@@ -19,7 +19,9 @@ export const NFTProvider = ({ children }) => {
     setIsLoadingNFT(false);
 
     const provider = new ethers.providers.JsonRpcProvider();
+    console.log(provider);
     const contract = fetchContract(provider);
+    console.log(contract);
 
     const data = await contract.fetchMarketItems();
 
