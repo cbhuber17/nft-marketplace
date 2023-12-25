@@ -22,7 +22,7 @@ export const NFTProvider = ({ children }) => {
       process.env.NEXT_PUBLIC_INFURIA_RPC_URL
     );
     console.log(provider);
-    console.log(provider.getCode(process.env.NEXT_PUBLIC_INFURIA_RPC_URL));
+    console.log(provider.getCode(MarketAddress));
     const contract = fetchContract(provider);
 
     const data = await contract.fetchMarketItems();
